@@ -47,3 +47,6 @@ let obj1 = {
 for(let datum in obj1){    // returns keys
     console.log(datum);   // returns name job
 }
+for(let datum in obj1){    // returns keys
+    console.log(obj1[datum]);   // returns values
+}
