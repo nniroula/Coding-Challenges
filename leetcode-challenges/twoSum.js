@@ -12,6 +12,8 @@ Constraints:
 Only one valid answer exists.
 */
 
+// Accepted answer
+
 /**
  * @param {number[]} nums
  * @param {number} target
@@ -19,22 +21,26 @@ Only one valid answer exists.
  */
 var twoSum = function(nums, target) {
     // what do you return if sum is not equal to target, return 'pair does not exist'
-    //let number = [];
+    let indexArray = [];
     for(let i = 0; i< nums.length; i++){
-        for(let j = 1; j< nums.length; j++){
+        for(let j = i + 1; j< nums.length; j++){  // j = i + 1;
             if(nums[i] + nums[j] === target){
-                return [i, j];
-                // number.push(i);
-                // number.push(j);
-                // return number;
+                //return [i, j];
+                indexArray.push(i);
+                indexArray.push(j);
+                return indexArray;
             }
         }
+    }
+    if (indexArray.length > 0){
+        return indexArray
     }
     return "Pair does not exist";
 };
 
 console.log(twoSum([2,7,11,15], 9));
 console.log(twoSum([2,7,11,15], 35));
+console.log(twoSum([2, 5, 5, 11], 10));
 
 // Discussion space and time complexity -> O(n^2) 2 for loops
 // Can you do it in O(n)
