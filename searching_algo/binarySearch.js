@@ -22,6 +22,7 @@
  */
 
 const binarySearch = (arr, value) => {
+    // array must be sorted, or you sort it array.sort()
   
     let lowerIndex = 0;
     let upperIndex = arr.length - 1;
